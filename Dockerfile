@@ -35,7 +35,7 @@ WORKDIR /var/www/laravelInertiaVue
 
 COPY . .
 
-RUN cd .. && rm -rf html && ln -s laravelInertiaVue/public html && chmod -R 775 laravelInertiaVue/storage && chmod -R 775 laravelInertiaVue/bootstrap && cd laravelInertiaVue && composer install && php artisan key:generate && npm install && npm run development && php artisan optimize:clear
+RUN cd .. && rm -rf html && ln -s laravelInertiaVue/public html && chmod -R 775 laravelInertiaVue/storage && chmod -R 775 laravelInertiaVue/bootstrap && cd laravelInertiaVue && composer install && php artisan key:generate && npm install && npm run build && php artisan optimize:clear
 
 # RUN npm run dev
 
